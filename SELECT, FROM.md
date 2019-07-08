@@ -101,7 +101,7 @@ select sysdate - 10, sysdate, sysdate + 10 from dual;
 select 10/4, round(10/3, 2) 반올림 from dual;
 ```
 
-###### 
+###### 결과
 
 ![결과1-6](/image_file/결과1-6.png)
 
@@ -114,5 +114,8 @@ select 10 || 20, 30 || '살' from dual;
 
 ###### 결과
 
+![결과1-7](/image_file/결과1-7.png)
+
+****
 
 
