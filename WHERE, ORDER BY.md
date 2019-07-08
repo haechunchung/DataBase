@@ -140,4 +140,28 @@ select emp_id 직원ID, emp_name 이름, dept_name 부서명 from emp where dept
 
 ****
 
-6. 
+6. where의 조건이 여러개인 경우 and 또는 or 을 사용한다.
+
+- EMP 테이블에서 업무(job)가 'SA_REP' 이고 급여(salary)가 $9,000 인 직원의 직원의 ID(emp_id), 이름(emp_name), 업무(job), 급여(salary)를 조회
+
+```sql
+select emp_id 직원ID, emp_name 이름, job 업무, salary 급여 from emp where job = 'SA_REP' AND salary = 9000;
+```
+
+###### 결과
+
+![결과2-12](/image_file/결과2-12.png)
+
+- EMP 테이블에서 업무(job)에 'MAN'이 들어가는 직원들 중 급여(salary)가 $10,000 이하이 거나 2008년 이후 입사한  
+직원의 ID(emp_id), 이름(emp_name), 업무(job), 입사일(hire_date), 급여(salary)를 조회
+
+```sql
+select emp_id 직원ID, emp_name 이름, job 업무, hire_date 입사일, salary 급여 from emp
+where job like '%MAN%' AND salary <= 10000 OR hire_date >= '2008/01/01';
+```
+
+###### 결과
+
+![결과2-13](/image_file/결과2-13.png)
+
+****
