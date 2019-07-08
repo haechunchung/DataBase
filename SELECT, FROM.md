@@ -79,3 +79,5 @@ select 4+2, 4-2, 4*2, 4/2 from dual;
 
 ###### 결과
 
+
+![결과1-1](/image_file/결과1-4.png)
