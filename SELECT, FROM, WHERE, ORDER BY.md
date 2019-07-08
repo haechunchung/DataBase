@@ -21,3 +21,14 @@ select * from emp;
 ```sql
 select emp_id, emp_name, job from EMP;
 ```
+
+###### 결과
+![결과1-1](/image_file/결과1-1.png)
+
+- EMP 테이블의 업무(job) 어떤 값들로 구성되었는지 조회 - 동일한 값은 하나씩만 조회되도록 처리
+
+```sql
+select DISTINCT job from EMP;
+```
+
+###### 결과
