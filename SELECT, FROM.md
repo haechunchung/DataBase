@@ -77,7 +77,23 @@ select emp_id "직원 ID", emp_name 직원이름, hire_date 입사일, salary �
 select 4+2, 4-2, 4*2, 4/2 from dual;
 ```
 
+****
+
+###### 결과
+
+![결과1-4](/image_file/결과1-4.png)
+
+7. sysdate : 현재 시간을 알려준다.
+
+```sql
+select sysdate - 10, sysdate, sysdate + 10 from dual;
+```
+
 ###### 결과
 
 
-![결과1-1](/image_file/결과1-4.png)
+
+
+
+
+
