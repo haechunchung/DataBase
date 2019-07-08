@@ -81,6 +81,14 @@ select 4+2, 4-2, 4*2, 4/2 from dual;
 
 ![결과1-4](/image_file/결과1-4.png)
 
+- EMP 테이블에서 직원의 이름(emp_name)과 연봉(salary는 월급)을 조회
+
+```sql
+select emp_name 이름, salary*12 as 연봉 from EMP;
+```
+
+###### 결과
+
 ****
 
 7. sysdate : 현재 시간을 알려준다.
@@ -115,6 +123,15 @@ select 10 || 20, 30 || '살' from dual;
 ###### 결과
 
 ![결과1-7](/image_file/결과1-7.png)
+
+- EMP 테이블에서 직원이름(emp_name)과 급여(salary)을 조회. 급여 앞에 $를 붙여 조회
+
+```sql
+select emp_name 이름, '$' || salary from EMP;
+```
+
+###### 결과
+
 
 ****
 
