@@ -37,6 +37,7 @@ select emp_id 직원ID, emp_name 이름, salary 급여 from emp where salary bet
 
 ###### 결과
 
+![결과2-3](/image_file/결과2-3.png)
 
 - 급여(salary)가 $4,000에서 $8,000 사이에 포함되지 않는 모든 직원들의  ID(emp_id), 이름(emp_name), 급여(salary)를 조회
 
@@ -45,3 +46,9 @@ select emp_id 직원ID, emp_name 이름, salary 급여 from emp where salary not
 ```
 
 ###### 결과
+
+![결과2-4](/image_file/결과2-4.png)
+
+****
+
+
