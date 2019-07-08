@@ -1,7 +1,7 @@
 
 
 ### SELECT 컬럼 FROM 테이블명 WHERE 조건  
-1. 숫자, 문자열 모두 >, >=, <, <=, =, != 비교
+1. 숫자, 문자열,날짜 모두 >, >=, <, <=, =, != 비교
 
 - EMP 테이블에서 직원_ID(emp_id)가 110인 직원의 이름(emp_name)과 부서명(dept_name)을 조회
 
@@ -75,4 +75,42 @@ select emp_id 직원ID, emp_name 이름, job 업무 from emp where job not in ('
 ![결과2-6](/image_file/결과2-6.png)
 
 ****
+
+4. where 컬럼 like 패턴 : 칼럼의 값들 중 패턴이 일치하는 값들을 조회  
+where 컬럼 not like 패턴 : 칼럼의 값들 중 패턴이 일치하지 않는 값들을 조회
+- % : 문자열을 의미, _ : 한 개의 문자를 의미  
+ex) 'AB%' : AB로 시작하는 문자열, 'AB%' : AB로 끝나는 문자열, '%AB%' : 중간에 AB가 들어있는 문자열  
+ex) '__AB%' : 두 글자 뒤에 AB가 나오고 그 뒤에 문자열이 나오는 패턴
+
+- EMP 테이블에서 직원 이름(emp_name)이 en으로 끝나는 직원의  ID(emp_id), 이름(emp_name)을 조회
+
+```sql
+select emp_id 직원ID, emp_name 이름 from emp where emp_name like '%en';
+```
+
+###### 결과
+
+
+- EMP 테이블에서 직원 이름(emp_name)이 S로 시작하지 않는 직원의  ID(emp_id), 이름(emp_name)
+
+```sql
+select emp_id 직원ID, emp_name 이름 from emp where emp_name NOT LIKE 'S%';
+```
+
+###### 결과
+
+
+- EMP 테이블에서 직원 이름(emp_name)의 세 번째 문자가 “e”인 모든 사원의 이름을 조회
+
+```sql
+select emp_name 직원이름 from emp where emp_name like '__e%';
+```
+
+###### 결과
+
+
+****
+
+
+
 
