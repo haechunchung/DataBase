@@ -12,6 +12,7 @@ select emp_name 직원이름, dept_name 부서명 from EMP where emp_id = 110;
 
 ###### 결과
 
+![결과2-1](/image_file/결과2-1.png)
 
 - EMP 테이블에서 'IT' 부서에 속하는 직원들의 ID(emp_id), 이름(emp_name), 부서명(dept_name)을 조회
 
@@ -21,3 +22,4 @@ select emp_id 직원ID, emp_name 이름, dept_name 부서명 from EMP where dept
 
 ###### 결과
 
+![결과2-2](/image_file/결과2-2.png)
