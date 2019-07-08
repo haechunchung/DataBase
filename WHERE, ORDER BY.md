@@ -51,4 +51,27 @@ select emp_id 직원ID, emp_name 이름, salary 급여 from emp where salary not
 
 ****
 
+3. where 칼럼 in (A, B, ...) : 칼럼의 값이 in (A, B, ...)에 있는 값과 동일한 값들을 조회  
+where 칼럼 not in (A, B, ...) : 칼럼의 값이 in(A, B, ...)에 있는 값과 동일하지 않은 값들을 조회
+
+- EMP 테이블에서 업무(job)가 'IT_PROG' 거나 'ST_MAN' 인 직원의  ID(emp_id), 이름(emp_name), 업무(job)을 조회
+
+```sql
+select emp_id 직원ID, emp_name 이름, job 업무 from emp where job in ('IT_PROG', 'ST_MAN');
+```
+
+###### 결과
+
+
+- EMP 테이블에서 업무(job)가 'IT_PROG' 나 'ST_MAN' 가 아닌 직원의  ID(emp_id), 이름(emp_name), 업무(job)을 조회
+
+```sql
+select emp_id 직원ID, emp_name 이름, job 업무 from emp where job not in ('IT_PROG', 'ST_MAN');
+```
+
+###### 결과
+
+
+
+****
 
