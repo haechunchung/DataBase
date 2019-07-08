@@ -52,4 +52,9 @@ select DISTINCT emp_id, emp_name, job from EMP;
 => 만약 별칭에 띄어쓰기가 있을 경우 반드시 쌍따옴표로 묶어주어야 한다.  
 - EMP 테이블에서 emp_id는 직원 ID, emp_name은 직원이름, hire_date는 입사일, salary는 급여, dept_name은 소속부서 별칭으로 조회
 
+```sql
+select emp_id "직원 ID", emp_name 직원이름, hire_date 입사일, salary 급여, dept_name 소속부서 from EMP;
+```
 
+###### 결과
+![결과1-3](/image_file/결과1-3.png)
