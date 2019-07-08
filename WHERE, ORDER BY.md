@@ -62,6 +62,7 @@ select emp_id 직원ID, emp_name 이름, job 업무 from emp where job in ('IT_P
 
 ###### 결과
 
+![결과2-5](/image_file/결과2-5.png)
 
 - EMP 테이블에서 업무(job)가 'IT_PROG' 나 'ST_MAN' 가 아닌 직원의  ID(emp_id), 이름(emp_name), 업무(job)을 조회
 
@@ -71,7 +72,7 @@ select emp_id 직원ID, emp_name 이름, job 업무 from emp where job not in ('
 
 ###### 결과
 
-
+![결과2-6](/image_file/결과2-6.png)
 
 ****
 
