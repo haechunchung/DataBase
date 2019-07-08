@@ -5,8 +5,8 @@
 ``` sql
 desc emp;
 ```
-
-![emp테이블구조](/image_file/emp테이블구조)
+###### 결과
+![emp테이블구조](/image_file/emp테이블구조.png)
 
 
 ### SELECT 컬럼, 컬럼, ... FROM 테이블명
