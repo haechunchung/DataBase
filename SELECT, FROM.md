@@ -89,6 +89,8 @@ select emp_name 이름, salary*12 as 연봉 from EMP;
 
 ###### 결과
 
+![결과1-8](/image_file/결과1-8.png)
+
 ****
 
 7. sysdate : 현재 시간을 알려준다.
@@ -132,6 +134,7 @@ select emp_name 이름, '$' || salary from EMP;
 
 ###### 결과
 
+![결과1-9](/image_file/결과1-9.png)
 
 ****
 
