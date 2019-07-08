@@ -91,6 +91,7 @@ select sysdate - 10, sysdate, sysdate + 10 from dual;
 
 ###### 결과
 
+![결과1-5](/image_file/결과1-5.png)
 
 
 
