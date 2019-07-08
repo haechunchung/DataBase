@@ -51,8 +51,8 @@ select emp_id 직원ID, emp_name 이름, salary 급여 from emp where salary not
 
 ****
 
-3. where 칼럼 in (A, B, ...) : 칼럼의 값이 in (A, B, ...)에 있는 값과 동일한 값들을 조회  
-where 칼럼 not in (A, B, ...) : 칼럼의 값이 in(A, B, ...)에 있는 값과 동일하지 않은 값들을 조회
+3. where 칼럼 in (A, B, C, ...) : 칼럼의 값이 in (A, B, C, ...)에 있는 값과 동일한 값들을 조회  
+where 칼럼 not in (A, B, C, ...) : 칼럼의 값이 in(A, B, C, ...)에 있는 값과 동일하지 않은 값들을 조회
 
 - EMP 테이블에서 업무(job)가 'IT_PROG' 거나 'ST_MAN' 인 직원의  ID(emp_id), 이름(emp_name), 업무(job)을 조회
 
@@ -114,6 +114,30 @@ select emp_name 직원이름 from emp where emp_name like '__e%';
 
 ****
 
+5. null의 비교는 = 또는 != 연산으로 안된다. is 또는 is not을 사용한다.  
+where 컬럼 is null : 컬럼의 값 중에 null인 값들을 조회  
+where 컬럼 is not null : 컬럼의 값 중에 null이 아닌 값들을 조회
 
+- EMP 테이블에서 부서명(dept_name)이 null인 직원의 ID(emp_id), 이름(emp_name), 부서명(dept_name)을 조회
 
+```sql
+select emp_id 직원ID, emp_name 이름, dept_name 부서명 from emp where dept_name is null;
+```
 
+###### 결과
+
+![결과2-10](/image_file/결과2-10.png)
+
+- 부서명(dept_name) 이 NULL이 아닌 직원의 ID(emp_id), 이름(emp_name), 부서명(dept_name) 조회
+
+```sql
+select emp_id 직원ID, emp_name 이름, dept_name 부서명 from emp where dept_name is not null;
+```
+
+###### 결과
+
+![결과2-11](/image_file/결과2-11.png)
+
+****
+
+6. 
