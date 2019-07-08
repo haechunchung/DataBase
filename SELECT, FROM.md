@@ -47,9 +47,8 @@ select DISTINCT emp_id, emp_name, job from EMP;
 ###### 결과
 ![결과1-1](/image_file/결과1-1.png)
 
-5. alias(별칭)  
+5. alias : 조회하는 컬럼의 제목을 별칭으로 바꾼다.  
 => select 컬럼 as 별칭 from 테이블명 (as는 생략가능)  
-=> 컬럼의 제목을 별칭으로 나타내서 보여준다.  
 => 만약 별칭에 띄어쓰기가 있을 경우 반드시 쌍따옴표로 묶어주어야 한다.  
 - EMP 테이블에서 emp_id는 직원 ID, emp_name은 직원이름, hire_date는 입사일, salary는 급여, dept_name은 소속부서 별칭으로 조회
 
