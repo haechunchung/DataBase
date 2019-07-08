@@ -93,6 +93,15 @@ select sysdate - 10, sysdate, sysdate + 10 from dual;
 
 ![결과1-5](/image_file/결과1-5.png)
 
+****
+
+8. round(a, b) : a를 소수점 아래 b번째 자리까지 반올림하여 조회한다.
+
+```sql
+select 10/4, round(10/3, 2) 반올림 from dual;
+```
+
+###### 
 
 
 
