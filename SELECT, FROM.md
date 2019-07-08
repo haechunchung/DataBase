@@ -134,6 +134,7 @@ select emp_name 이름, '$' || salary from EMP;
 
 ###### 결과
 
+![결과1-9](/image_file/결과1-9.png)
 
 ****
 
