@@ -15,3 +15,9 @@ desc emp;
 ```sql
 select * from emp;
 ```
+
+- EMP 테이블의 직원 ID(emp_id), 직원 이름(emp_name), 업무(job) 컬럼의 값을 조회
+
+```sql
+select emp_id, emp_name, job from EMP;
+```
