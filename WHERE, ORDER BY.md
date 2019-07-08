@@ -90,6 +90,7 @@ select emp_id 직원ID, emp_name 이름 from emp where emp_name like '%en';
 
 ###### 결과
 
+![결과2-7](/image_file/결과2-7.png)
 
 - EMP 테이블에서 직원 이름(emp_name)이 S로 시작하지 않는 직원의  ID(emp_id), 이름(emp_name)
 
@@ -99,6 +100,7 @@ select emp_id 직원ID, emp_name 이름 from emp where emp_name NOT LIKE 'S%';
 
 ###### 결과
 
+![결과2-8](/image_file/결과2-8.png)
 
 - EMP 테이블에서 직원 이름(emp_name)의 세 번째 문자가 “e”인 모든 사원의 이름을 조회
 
@@ -108,6 +110,7 @@ select emp_name 직원이름 from emp where emp_name like '__e%';
 
 ###### 결과
 
+![결과2-9](/image_file/결과2-9.png)
 
 ****
 
