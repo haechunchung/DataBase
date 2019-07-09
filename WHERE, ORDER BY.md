@@ -235,7 +235,7 @@ select DISTINCT dept_name from emp order by dept_name desc nulls last;
 
 4. 날짜의 경우  
 오름차순 : 과거 -> 미래  
-내림차순 : 미래 -> 
+내림차순 : 미래 -> 과거
 
 - EMP 테이블에서 직원의 ID(emp_id), 이름(emp_name), 업무(job), 입사일(hire_date)을 입사일(hire_date) 순(내림차순)으로 조회
 
@@ -249,5 +249,47 @@ select emp_id 직원ID, emp_name 이름, job 업무, hire_date 입사일 from em
 
 ****
 
-3. 
+5. SELECT 컬럼 FROM 테이블명 WHERE 조건 ORDER BY 컬럼
+
+- 급여(salary)가 $5,000을 넘는 직원의 ID(emp_id), 이름(emp_name), 급여(salary)를 급여가 낮은 순서부터 조회
+
+```sql
+select emp_id 직원ID, emp_name 이름, salary 급여 from emp where salary > 5000 order by salary;
+```
+
+###### 결과
+
+![결과2-19](/image_file/결과2-19.png)
+
+****
+
+6. SELECT 컬럼 FROM 테이블명 WHERE 조건 ORDER BY 컬럼1 (ASC or DESC), 컬럼2 (ASC or DESC), ...  
+1차로 컬럼1로 정렬을 하고, 컬럼1에서 동일한 값이 존재할 경우 2차로 컬럼2로 정렬을 하고, ...
+
+- 직원들의 id(emp_id), 이름(emp_name), 업무(job), 급여(salary)를  
+업무(job) 순서대로 (A -> Z) 조회하고 업무(job)가 같은 직원들은  급여(salary)가 높은 순서대로 2차 정렬해서 조회
+
+```sql
+select emp_id 직원ID, emp_name 이름, job 업무, salary 급여 from emp order by job, salary DESC;
+```
+
+###### 결과
+
+![결과2-20](/image_file/결과2-20.png)
+
+- EMP 테이블에서 ID(emp_id), 이름(emp_name), 급여(salary), 입사일(hire_date)을  
+급여(salary) 내림차순으로 정렬하고 급여(salary)가 같은 경우는 입사일(hire_date)가 오래된 순서로 정렬
+
+```sql
+select emp_id 직원ID, emp_name 이름, salary 급여, hire_date 입사일 from emp order by salary desc, hire_date asc;
+```
+
+###### 결과
+
+![결과2-21](/image_file/결과2-21.png)
+
+****
+
+
+
 
