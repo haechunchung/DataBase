@@ -182,10 +182,8 @@ select DISTINCT dept_name from emp order by dept_name;
 
 ![결과2-14](/image_file/결과2-14.png)
 
-2. ORDER BY 컬럼 ASC : 해당 컬럼에 있는 값들을 오름차순으로 정렬  
-=> 문자열 : 숫자 -> 대문자 -> 소문자 -> 한글 -> null   /   날짜 : 과거 -> 미래  
-ORDER BY 컬럼 DESC : 해당 컬럼에 있는 값들을 내림차순으로 정렬  
-=> 문자열 : null -> 한글 -> 소문자 -> 대문자 -> 숫자   /   날짜 : 미래 -> 과거  
+2. ORDER BY 컬럼 ASC : 해당 컬럼에 있는 값들을 오름차순으로 정렬 ( 숫자 -> 대문자 -> 소문자 -> 한글 -> null )  
+ORDER BY 컬럼 DESC : 해당 컬럼에 있는 값들을 내림차순으로 정렬 ( null -> 한글 -> 소문자 -> 대문자 -> 숫자 )  
 
 - 부서명을 부서명(dept_name)의 오름차순으로 정렬해서 조회(중복은 제거)
 
@@ -208,6 +206,37 @@ select DISTINCT dept_name from emp order by dept_name desc;
 
 ![결과2-15](/image_file/결과2-15.png)
 
+****
+
+3. nulls first : 오름차순에서 null이 먼저 나오도록 한다.  
+nulls last : 내림차순에서 null을 마지막에 나오도록 한다.
+
+- 부서명을 부서명(dept_name)의 오름차순으로 정렬해서 조회(중복은 제거, null인 경우 가장 먼저 나온다.)
+
+```sql
+select DISTINCT dept_name from emp order by dept_name nulls first;
+```
+
+###### 결과
+
+![결과2-17](/image_file/결과2-17.png)
+
+- 부서명을 부서명(dept_name)의 내림차순으로 정렬해서 조회(중복은 제거, null인 경우 가장 나중에 나온다.)
+
+```sql
+select DISTINCT dept_name from emp order by dept_name desc nulls last;
+```
+
+###### 결과
+
+![결과2-18](/image_file/결과2-18.png)
+
+****
+
+4. 날짜의 경우  
+오름차순 : 과거 -> 미래  
+내림차순 : 미래 -> 
+
 - EMP 테이블에서 직원의 ID(emp_id), 이름(emp_name), 업무(job), 입사일(hire_date)을 입사일(hire_date) 순(내림차순)으로 조회
 
 ```sql
@@ -220,5 +249,5 @@ select emp_id 직원ID, emp_name 이름, job 업무, hire_date 입사일 from em
 
 ****
 
-
+3. 
 
