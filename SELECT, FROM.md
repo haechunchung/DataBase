@@ -105,10 +105,11 @@ select sysdate - 10, sysdate, sysdate + 10 from dual;
 
 ****
 
-8. round(a, b) : a를 소수점 아래 b번째 자리까지 반올림하여 조회한다.
+8. round(a, b) : a를 소수점 아래 b번째 자리까지 반올림하여 조회한다.  
+round(a) : a를 정수까지 반올림하여 조회한다.
 
 ```sql
-select 10/4, round(10/3, 2) 반올림 from dual;
+select 10/4, round(10/3, 2) "소수점 2째자리", round(10.3) "정수로 반올림" from dual;
 ```
 
 ###### 결과
