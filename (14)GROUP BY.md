@@ -48,7 +48,7 @@ select dept_name 부서, sum(salary) 급여합계 from emp group by dept_name;
 
 결과)
 
-| 부서 | 급여 |
+| 부서 | 급여합계 |
 |:----:|:----:|
 |  IT  | 300 |
 |  DB  | 1200 |
