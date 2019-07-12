@@ -59,7 +59,7 @@ ii. 예제의 경우 그룹함수가 sum()과 count()였으므로,
     ```sql
     select dept_name 부서, max(salary) 최대급여, min(salary) 최소급여
     from emp
-    group by dept_name;
+    group by rollup(dept_name);
     ```
     
     ###### 결과
