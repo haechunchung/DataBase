@@ -6,7 +6,7 @@
 from 테이블  
 group by rollup(ex1, ex2, ...)  
 (ex1, ex2, ..., expr => 컬럼)  
-rollup의 결과는 집계에 참여한 컬럼의 값은 null이 나오고 expr에 집계결과가 나온다.
+rollup의 결과 : 집계에 참여한 컬럼의 값은 null이 , expr 컬럼에 집계결과가 나온다.
 - rollup 집계 방법
   1. group by rollup(컬럼)  
     컬럼에 대해 group by를 진행한 후,  
