@@ -187,7 +187,9 @@ rollup의 결과는 집계에 참여한 컬럼의 값은 null이 나오고 expr�
        
        ```sql
        select decode(grouping_id(dept_name), 0, dept_name, '총평균') 부서,
-       decode(grouping_id(dept_name, to_char(hire_date, 'yyyy')), 0, to_char(hire_date, 'yyyy'), 1, '중간평균', ' ') 입사년도,
+       decode(grouping_id(dept_name, to_char(hire_date, 'yyyy')),
+              0, to_char(hire_date, 'yyyy'),
+              1, '중간평균', ' ') 입사년도,
        round(avg(salary)) 평균급여
        from emp
        group by rollup(dept_name, to_char(hire_date, 'yyyy'));
@@ -195,7 +197,7 @@ rollup의 결과는 집계에 참여한 컬럼의 값은 null이 나오고 expr�
   
        ###### 결과
        
-       ![결과13-13](/image_file/결과13-13.png)
+       ![결과13-13](/image_file/결과13-13.png)  
        ![결과13-14](/image_file/결과13-14.png)
        
        
