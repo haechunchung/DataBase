@@ -168,6 +168,8 @@ rollup의 결과는 집계에 참여한 컬럼의 값은 null이 나오고 expr�
      grouping_id(b)는 grouping_id(a, b)에서 2진수의 1번째 인자가 된다.  
      grouping_id(a)는 grouping_id(a, b)에서 2진수의 2번째 인자가 된다.  
      grouping_id(a, b)는 grouping(a)와 grouping(b)의 결과를 합친 2진수를 10진수로 바꿔서 나온다.  
+     - grouping_id(a, b)의 결과는 0, 1, 3으로 나온다.  
+     - grouping_id(a, b, c)의 결과는 0, 1, 3, 7로 나온다.
      - 예시)  
        부서별(dept_name), 입사년도별 평균 급여(salary) 조회. 부서별 집계와 총집계가 같이 나오도록 조회
      
