@@ -48,6 +48,8 @@ rollup의 결과는 집계에 참여한 컬럼의 값은 null이 나오고 expr�
       ![결과13-2](/image_file/결과13-2.png)  
       ![결과13-3](/image_file/결과13-3.png)
     
+    ****
+    
 ### CUBE
 - rollup의 확장판
 - 나올 수 있는 모든 그룹에 대한 집계를 한다.
@@ -101,6 +103,8 @@ rollup의 결과는 집계에 참여한 컬럼의 값은 null이 나오고 expr�
     
       ![결과13-5](/image_file/결과13-5.png)  
       ![결과13-6](/image_file/결과13-6.png)
+   
+    ****
     
 ### GROUPING
 - select grouping(group_by에서 사용한 컬럼명)  
@@ -135,6 +139,8 @@ rollup의 결과는 집계에 참여한 컬럼의 값은 null이 나오고 expr�
   ###### 결과
   
   ![결과13-8](/image_file/결과13-8.png)
+  
+  ****
   
 ### GROUPING_ID
 - select grouping_id(group_by에서 사용한 컬럼명)  
@@ -201,8 +207,18 @@ rollup의 결과는 집계에 참여한 컬럼의 값은 null이 나오고 expr�
        ![결과13-13](/image_file/결과13-13.png)  
        ![결과13-14](/image_file/결과13-14.png)
        
+       EMP 테이블에서 부서(dept_name), 업무(job) 별 salary의 합계와 직원수를 중간집계와 총집계가 나오도록 조회
        
-     
+       ```sql
+       select decode(grouping_id(dept_name), 0, dept_name, '총집계') 부서,
+       decode(grouping_id(dept_name, job), 0, job, 1, '중간집계', 3, ' ') 업무,
+       sum(salary) 총급여,
+       count(*) 직원수
+       from emp
+       group by rollup(dept_name, job);
+       ```
+       ###### 결과
+       
+       ![결과13-15](/image_file/결과13-15.png)  
+       ![결과13-16](/image_file/결과13-16.png)
   
-  
-- 
