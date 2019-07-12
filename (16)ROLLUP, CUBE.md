@@ -49,22 +49,22 @@ rollup의 결과 : 집계에 참여한 컬럼의 값은 null이 , expr 컬럼에
       ![결과13-3](/image_file/결과13-3.png)
       
 - 중간집계 또는 총집계의 결과는 그룹함수에 의해 결정된다.  
-i. 예제의 경우 그룹함수가 avg()였으므로, 총집계의 결과도 avg()인 전체의 평균으로 나온다.  
-ii. 예제의 경우 그룹함수가 sum()과 count()였으므로,  
-중간집계와 총집계의 결과 또한 sum()인 전체의 합과 count()인 전체 갯수의 결과가 나온다.  
-아래 예제의 경우 그룹함수가 max()와 min()이므로, 총집계의 결과 또한 max()인 전체 최댓값과 min()인 전체 최솟값이 나온다.
-  - 예제)  
-    부서별(dept_name) 별 최대 salary와 최소 salary와 전체 최대 salary와 최소 salary를 조회  
+  - i. 예제의 경우 그룹함수가 avg()였으므로, 총집계의 결과도 avg()인 전체의 평균으로 나온다.  
+  - ii. 예제의 경우 그룹함수가 sum()과 count()였으므로,  
+  중간집계와 총집계의 결과 또한 sum()인 전체의 합과 count()인 전체 갯수의 결과가 나온다.  
+  - 아래 예제의 경우 그룹함수가 max()와 min()이므로, 총집계의 결과 또한 max()인 전체 최댓값과 min()인 전체 최솟값이 나온다.
+    - 예제)  
+      부서별(dept_name) 별 최대 salary와 최소 salary와 전체 최대 salary와 최소 salary를 조회  
     
-    ```sql
-    select dept_name 부서, max(salary) 최대급여, min(salary) 최소급여
-    from emp
-    group by rollup(dept_name);
-    ```
+      ```sql
+      select dept_name 부서, max(salary) 최대급여, min(salary) 최소급여
+      from emp
+      group by rollup(dept_name);
+      ```
     
-    ###### 결과
+      ###### 결과
     
-    ![결과13-17](/image_file/결과13-17.png)
+      ![결과13-17](/image_file/결과13-17.png)
     
 ****
     
