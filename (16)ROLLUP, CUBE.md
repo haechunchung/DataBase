@@ -103,3 +103,86 @@ rollup의 결과는 집계에 참여한 컬럼의 값은 null이 나오고 expr�
       ![결과13-6](/image_file/결과13-6.png)
     
 ### GROUPING
+- select grouping(group_by에서 사용한 컬럼명)  
+=> grouping()의 인자로는 컬럼이 한 개만 올 수 있다.
+- group by 에서 rollup이나 cube로 묶은 컬럼의 행이 집계시 참여 했으면 1, 집계시 참여하지 않았으면 0을 반환한다.
+- 전체 집계에 나오는 (null)대신 다른 값을 넣을 때 사용
+- 예시)  
+  EMP 테이블에서 업무(JOB) 별 급여(salary)의 평균과 평균의 총계도 같이나오도록 조회  
+  
+  ```sql
+  select dept_name 업무,
+       grouping(dept_name) grouping,
+       ceil(avg(salary)) 평균급여
+       from emp
+       group by rollup(dept_name);
+  ```
+  
+  ###### 결과
+  
+  ![결과13-7](/image_file/결과13-7.png)
+  
+  EMP 테이블에서 업무(JOB) 별 급여(salary)의 평균과 평균의 총계도 같이나오도록 조회  
+  (업무 컬럼에  소계나 총계이면 '총평균'을  일반 집계이면 업무(job)을 출력)
+  
+  ```sql
+  select decode(grouping(dept_name), 0, dept_name, '총평균') 업무,
+       ceil(avg(salary)) 평균급여
+       from emp
+       group by rollup(dept_name);
+  ```
+  
+  ###### 결과
+  
+  ![결과13-8](/image_file/결과13-8.png)
+  
+### GROUPING_ID
+- select grouping_id(group_by에서 사용한 컬럼명)  
+=> grouping_id()의 인자로는 컬럼이 여러 개 올 수 있다.
+- grouping_id()는 2진수를 10진수로 변환한 결과가 나온다.
+  1. grouping_id()의 인자로 한 개의 컬럼만 올 경우  
+     => grouping()과 동일한 결과가 나온다.
+  - 예시)  
+    EMP 테이블에서 업무(JOB) 별 급여(salary)의 평균과 평균의 총계도 같이나오도록 조회  
+  
+    ```sql
+    select dept_name 업무,
+    grouping_id(dept_name) grouping_id,
+    ceil(avg(salary)) 평균급여
+    from emp
+    group by rollup(dept_name);
+    ```
+    
+    ###### 결과
+    
+    ![결과13-9](/image_file/결과13-9.png)
+    
+  2. grouping_id()의 인자로 두 개 이상의 컬럼이 올 경우  
+     - grouping_id(a, b)  
+     grouping_id(b)는 grouping_id(a, b)에서 2진수의 1번째 인자가 된다.  
+     grouping_id(a)는 grouping_id(a, b)에서 2진수의 2번째 인자가 된다.  
+     grouping_id(a, b)는 grouping(a)와 grouping(b)의 결과를 합친 2진수를 10진수로 바꿔서 나온다.  
+     - 예시)  
+       부서별(dept_name), 입사년도별 평균 급여(salary) 조회. 부서별 집계와 총집계가 같이 나오도록 조회
+     
+       ```sql
+       select dept_name 부서,
+       to_char(hire_date,'yyyy') 입사년도,
+       grouping_id(dept_name)"grouping_id(a)",
+       grouping_id(to_char(hire_date,'yyyy')) "grouping_id(b)",
+       grouping_id(dept_name, to_char(hire_date, 'yyyy')) "grouping_id(a, b)",
+       round(avg(salary)) 평균급여
+       from emp
+       group by rollup(dept_name, to_char(hire_date, 'yyyy'));
+       ```
+       
+       ###### 결과
+       
+       ![결과13-10](/image_file/결과13-10.png)
+       ![결과13-11](/image_file/결과13-10.png)
+       ![결과13-12](/image_file/결과13-10.png)
+       
+     
+  
+  
+- 
