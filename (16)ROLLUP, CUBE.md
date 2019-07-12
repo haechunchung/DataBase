@@ -179,8 +179,8 @@ rollup의 결과는 집계에 참여한 컬럼의 값은 null이 나오고 expr�
        ###### 결과
        
        ![결과13-10](/image_file/결과13-10.png)
-       ![결과13-11](/image_file/결과13-10.png)
-       ![결과13-12](/image_file/결과13-10.png)
+       ![결과13-11](/image_file/결과13-11.png)
+       ![결과13-12](/image_file/결과13-12.png)
        
      
   
