@@ -182,6 +182,23 @@ rollup의 결과는 집계에 참여한 컬럼의 값은 null이 나오고 expr�
        ![결과13-11](/image_file/결과13-11.png)
        ![결과13-12](/image_file/결과13-12.png)
        
+       부서별(dept_name), 입사년도별 평균 급여(salary) 조회. 부서별 집계와 총집계가 같이 나오도록 조회
+       부서 컬럼에 총집계이면 '총평균'을 입사년도 컬럼에 중간집계이면 '중간평균'을 출력
+       
+       ```sql
+       select decode(grouping_id(dept_name), 0, dept_name, '총평균') 부서,
+       decode(grouping_id(dept_name, to_char(hire_date, 'yyyy')), 0, to_char(hire_date, 'yyyy'), 1, '중간평균', ' ') 입사년도,
+       round(avg(salary)) 평균급여
+       from emp
+       group by rollup(dept_name, to_char(hire_date, 'yyyy'));
+       ```
+  
+       ###### 결과
+       
+       ![결과13-13](/image_file/결과13-13.png)
+       ![결과13-14](/image_file/결과13-14.png)
+       
+       
      
   
   
