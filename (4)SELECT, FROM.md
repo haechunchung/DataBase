@@ -31,7 +31,7 @@ select emp_id, emp_name, job from EMP;
 
 ****
 
-3. DOSTINCT는 조회된 내용에서 중복을 제거해 준다.
+3. DISTINCT는 조회된 내용에서 중복을 제거해 준다.
 - EMP 테이블의 업무(job) 어떤 값들로 구성되었는지 조회 - 동일한 값은 하나씩만 조회되도록 처리  
 
 
